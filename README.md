@@ -19,7 +19,7 @@ Access Our paper via the following link: [Agent in the Sky: Intelligent Multi-Ag
 The concept map and system diagram are as follows:
 
 ![Concept Map](result_paper/concept_map2.pdf)
-![System Diagram](result_paper/system_diagram3.pdf)
+![System Diagram](result_paper/system_dagram3.pdf)
 
 ## Visualization
 Below are visual representations of the simulation:

@@ -12,6 +12,15 @@ The inherently dynamic characteristics of HAPS systems present a myriad of chall
 
 Inspired by these challenges, the proposed ACMA framework seeks to enhance HAPS systems' intelligence through leveraging LLMs for real-time decision-making and environmental adaptability.
 
+## Our Paper
+Access Our paper via the following link: [Agent in the Sky: Intelligent Multi-Agent Framework for Autonomous HAPS Coordination and Real-World Event Adaptation](https://openreview.net/forum?id=MHbz86z3h5))
+
+## Concept Map and System Diagram
+The concept map and system diagram are as follows:
+
+![Concept Map](https://link-to-your-image.com/concept_map.png)
+![System Diagram](https://link-to-your-image.com/system_diagram.png)
+
 ## Visualization
 Below are visual representations of the simulation:
 

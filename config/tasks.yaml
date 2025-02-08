@@ -1,0 +1,65 @@
+single_haps:
+  description: |
+    The relevant information are as follows:
+    1.The recommendations provided by the analyst are as follows: {analysis}
+    2.Current information on all airships in the HAPS system (including the airship you are operating): {airships_information}
+    3.The current decisions of other airship operators are as follows: {current_decision} (If a dictionary is empty in the data, it indicates that the corresponding airship will make its decision after you.)
+    The considerations you need to keep in mind when selecting the location are as follows:
+    1.The analyst has provided you with some high user density locations, You may consider using these positions or nearby positions as targets.
+    2.Pay attention to the decisions made by other airships to avoid duplicating target positions and choose areas that are as uncrowded as possible.
+    Please refer to the following JSON format to return your output,e.g.:{json_template}(Please note: In JSON format, only double quotes are permitted)
+    In all cases, your answer should include the following fields:, e.g.:
+    ```json
+    ....
+    ```
+
+auxiliary_analysis:
+  description: >
+    The current time information for the high-altitude base station is as follows: {airships_information}
+    The recent historical coverage information records are as follows: {info_history}
+    Your analysis process steps is as follows:
+    Please extract the coordinates of high user density areas from the provided information (extract as many high-density locations as possible). These locations are theoretically unrelated to HAPS numbers and only reflect user density. Please provide their coordinates and the number of users covered!
+    For the output format, please refer to the following template: {analysis_template}
+    
+
+overlap_detection:
+  description: >
+    You only need to consider the issue of coverage overlap; no other recommendations are required.
+    The target_position_decision provided by the HAPS operator is as following json:{currect_decision}, the coverage radius of the HAPS is 210 km.
+    Please use tools to calculate and determine whether there is coverage overlap at the target position. If there is significant overlap, please Please change the target_position in the json file.
+    Make sure that the adjusted target positions more spread out to reduce overlap.The distance between any two HAPS must be greater than 200 km!
+    In all cases, your answer should include the JSON field of your decision(Do not change the original JSON format of target_position_decision, just change the value of "target_position".):, e.g.:
+    ```json
+    ....
+    ```
+    Note: In JSON format, both keys and values should be enclosed in double quotes.
+    Now you've done the calculations, give me the results of the above request directly, stop using tools!!!
+
+
+event_driven:
+  description: >
+    You only need to consider special events.
+    The current time information for the high-altitude base station is as follows: {airships_information}.
+    The target_position_decision provided by the HAPS operator is as following json: {currect_decision}.
+    Special events are as follows: {special_events}. 
+    If there are no special events (i.e., the special events are empty), it means there are no special events, and you do not need to modify the original decision.
+    In all cases, your answer should include the JSON field of your decision(Noet: Retain the original format of the decision, just change the value of "target_position".):, e.g.:
+    ```json
+    ....
+    ```
+    Note: In JSON format, both keys and values should be enclosed in double quotes.
+    Pay attention to the time and location of the event. The current time is {current_time}. Determine whether the event is outdated based on the current time.
+    
+    
+    
+
+
+
+    
+    
+    
+    
+    
+    
+
+    

@@ -1,0 +1,6 @@
+Extract High Coverage Areas from Historical Data(Please give the corresponding coordinates for the high coverage position)
+The coordinates for high user density are as follows:
+
+**summarization**:(Provide at least 4 coordinates corresponding to high coverage locations.)
+
+These coordinates (especially the high user density coordinates) serve as essential targets for optimizing the operations of the high-altitude airship.

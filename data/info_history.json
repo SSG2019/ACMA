@@ -1,0 +1,36 @@
+{
+    "2025-03-03 00:00:00": {
+        "HAPS0": {
+            "position": [
+                0,
+                750
+            ],
+            "radius_km": 210,
+            "users_covered": 0
+        },
+        "HAPS1": {
+            "position": [
+                500,
+                900
+            ],
+            "radius_km": 210,
+            "users_covered": 83
+        },
+        "HAPS2": {
+            "position": [
+                250,
+                200
+            ],
+            "radius_km": 210,
+            "users_covered": 46
+        },
+        "HAPS3": {
+            "position": [
+                950,
+                50
+            ],
+            "radius_km": 210,
+            "users_covered": 28
+        }
+    }
+}

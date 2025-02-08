@@ -8,7 +8,6 @@ def segment_output(text: str):
 
 
 def get_current_decision(timestamp, haps_system, users_group, haps_agent, haps_analyst, haps_overlap, haps_event, path_info_history, path_decision_history, path_event):
-    # 更新信息
     position = get_haps_position(haps_system)
     update_affiliated(users_group, haps_system)
     covered_number = update_haps_number(haps_system, users_group)

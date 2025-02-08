@@ -11,7 +11,6 @@ from utils.graph_utils import get_data_graph_single, get_data_graph_global, get_
 os.environ["OPENAI_API_KEY"] = "YOUR_API_KEY"
 
 
-# 初始化模型
 model_name = 'gpt-4o-mini'
 model_name_fine_tuning = 'ft:gpt-4o-mini-2024-07-18:li:haps-llm:ATqY0j9Y'    # Your fine-tuning model name
 HAPS_Agent = Agent_HAPS(model_name_fine_tuning)
@@ -71,7 +70,6 @@ while True:
         decision_count += 1
         start = time.time()
 
-        # 执行决策,生成数据
         # time.sleep(5)
         formatted_time = current_time.strftime("%Y-%m-%d %H:%M:%S")
 
@@ -90,19 +88,16 @@ while True:
         # time
         current_time += timedelta(seconds=elapsed_time)
 
-    # 时间更变
     current_time += timedelta(seconds=step_time)
     if int((current_time-start_time).total_seconds()) > step_decision*decision_count:
         current_time = start_time + timedelta(seconds=step_decision*decision_count)
 
-    # 更新信息：飞行位置、（用户位置、）用户隶属、覆盖个数
     update_haps_position(HAPS_system, target_position, (current_time-cycle_time).total_seconds())
     update_user_position(Users_group, (current_time-cycle_time).total_seconds())
     update_affiliated(Users_group, HAPS_system)
     update_haps_number(HAPS_system, Users_group)
     position_problem = target_position
 
-    # 数据生成
     haps_user_number_single = np.append(haps_user_number_single,
                                       np.array([HAPS_system[f"HAPS{j}"].UserNumber for j in range(len(HAPS_system))]).reshape(
                                           1,
@@ -131,7 +126,6 @@ while True:
         get_gif_single(HAPS_system, Users_group, current_time)
         break
 
-# 绘制图片
 images[0].save('result/CoverageMap/Agent_gif.gif', save_all=True, append_images=images[1:], duration=50, loop=0)
 get_data_graph_single('result/LineChart/single_coverage.png', haps_user_number_single, time_index)
 get_data_graph_global(haps_user_number_global, time_index)
